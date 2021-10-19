@@ -1,0 +1,13 @@
+version: '2'
+ 
+
+services:     
+  spa-application:
+    build:
+      context:  ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf  
+      - ./web-single-page/:/etc/nginx/html
+    ports:
+      - "9000:80"
